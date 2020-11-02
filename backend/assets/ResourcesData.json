@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "course": "JAM1000W",
+        "title": "JAM1000W notes",
+        "createdBy": "Me",
+        "lastModified": "02/11/2020"
+    },
+    {
+        "id": 2,
+        "course": "MAM1000W",
+        "title": "Getting your DP 101",
+        "createdBy": "Ralihlaba",
+        "lastModified": "10/10/2020"
+    },
+    {
+        "id": 3,
+        "course": "PHY1016F",
+        "title": "Cicular Motion",
+        "createdBy": "Me",
+        "lastModified": "01/11/2020"
+    }
+]
