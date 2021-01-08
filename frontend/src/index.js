@@ -1,6 +1,12 @@
-import React from "react"
-import ReactDom from "react-dom"
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import {createStore} from "redux"
+import { Provider } from "react-redux"
 
-import App from "./App"
+import rootReducer from "./reducers/rootReducer"
 
-ReactDom.render(<App />, document.getElementById("root"))
+// change this to combined reducer 
+const store = createStore(rootReducer)
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+

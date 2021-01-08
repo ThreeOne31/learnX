@@ -1,0 +1,73 @@
+/*----------------------------------------------------------------------------------*/
+/*                            FOOTER                                                */
+/*----------------------------------------------------------------------------------*/
+ul, li{
+    list-style: none;
+    padding: 0%;
+}
+.footer-items form{
+    border: none;
+    margin: 0;
+}
+.footer{
+    grid-area: footer;
+    border-top: 1rem solid #0bd125;
+    padding: 4em 0 8em 0;
+    color: white;
+    background-color: #4d4d4d;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.footer-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin: 0 4rem;
+}
+.footer-items{
+    width: 30%;
+    margin-left: 3%;
+}
+.footer-items h3{
+    width: 40%;
+    padding: 1rem 0;
+    border-bottom: 0.2rem solid #fff;
+}
+.form-container{
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+.form-inputs{
+    width: 50;
+    padding: 25px 0 0 25px;
+}
+.form-inputs input[type=email]{
+    -webkit-appearance: none;
+    width: 90%;
+    padding: 0.75em;
+    margin: 0;
+    line-height: 2em;
+    border: none;
+    background-color: #fff;
+}
+.form-inputs input[type=text]{
+    -webkit-appearance: none;
+    width: 100%;
+    padding: 0.75em;
+    margin: 0;
+    line-height: 2em;
+    border: none;
+    background-color: #fff;
+}
+.message-input{
+    width: 81%;
+    padding: 2.5rem 0 0 2.5rem;
+}
+.message-input textarea{
+    width: 100%;
+}
