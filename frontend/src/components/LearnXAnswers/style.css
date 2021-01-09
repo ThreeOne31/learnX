@@ -1,0 +1,120 @@
+.QnA-main-container{
+    margin: 1rem 2rem;
+}
+
+.question {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: .5rem;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+.question::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.question img {
+    float: left;
+    max-width: 6rem;
+    max-height: 6rem;
+    width: 100%;
+    margin: 1rem 2rem 0 0;
+    border-radius: 50%;
+}
+.question h3 {
+    margin-top: 0;
+}
+.question h4 {
+    margin: 0;
+    padding: 0;
+}
+.time-right {
+    float: right;
+    color: #aaa;
+}
+.question p{
+    margin: 0 0 1rem 8rem;
+    padding: 1rem 0;
+    border-bottom: 0.1rem solid #6d6d6d;
+}
+.question-footer{
+    margin: 0 0 0 8rem;
+    padding: 0;
+}
+.question-buttons{
+    margin: 0 1rem 0 0;
+    padding: 0;
+    width: auto;
+    background: none;
+    color: #000;
+    font-style: italic;
+}
+.question-tags{
+    float: right;
+    color: blue;
+}
+.reply-n-replies {
+    background-color: #f1f1f1;  /* light grey background */
+    width: 100%;
+    z-index: 1;             /* place on top */
+    margin-bottom: 0;       
+    padding-left: 0;
+    display: none;          /* hidden by default */
+    overflow: hidden;
+}
+.reply-count{
+    margin: 1rem 0 0 8rem;
+    font-size: 2.5rem;
+}
+
+.reply-form-container{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    margin: 2rem 0;
+}
+.reply-form-container form{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    border: none;
+    align-items: center;
+}
+.reply-form-container textarea{
+    width: 90%;
+    border: none;
+    height: 4rem;
+    align-content: center;
+}
+.send-reply{
+    margin: 0;
+    width: 8%;
+    min-width: 5rem;
+    border-radius: 10%;
+    text-align: center;
+}
+.reply-item{
+    border: 2px solid #dedede;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+.reply-item p{
+    margin: 0 0 1rem 8rem;
+    padding: 1rem 0;
+    border: none;
+}
+.replies-icon{
+    cursor: pointer;
+}
