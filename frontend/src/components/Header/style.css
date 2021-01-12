@@ -52,6 +52,7 @@ li{
     border: 0.2rem solid #ffffff;     /* add white solid border */
     font-size: 1.5rem;
     padding: 1rem;
+    color: #fff;
 }
 .nav-links button:hover{
     border: 0.4rem solid #0bd125;   /* change button border color on hover*/
@@ -180,7 +181,7 @@ li{
     margin: 1rem auto 3rem auto;
     width: 40%;
 }
-input[type=text], input[type=password] {
+.userName-input, .password-input {
     width: 100%;
     padding: 1.2rem 2rem;
     margin: 0.8rem 0;
@@ -189,20 +190,11 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
-button {
-    background-color: #4CAF50;
-    color: #ffffff;
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 1.4rem 2rem;
-    margin: .8rem 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
+
 
 .cancelbtn {
     width: auto;
+    color: #fff;
     padding: 1rem 1.8rem;
     background-color: #f44336;
 }

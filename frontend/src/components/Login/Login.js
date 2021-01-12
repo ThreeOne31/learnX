@@ -13,13 +13,13 @@ class Login extends React.Component{
 
                     <div className="container">
                         <label><b>Username</b></label>
-                        <input type="text" placeholder="Enter Username" name="userName" required />
-                        <br />
+                        <input className="userName-input" type="text" placeholder="Enter Username" name="userName" required />
+                        <br/>
 
                         <label><b>password</b></label>
-                        <input type="password" placeholder="Enter password" name="userName" required />
+                        <input className="password-input" type="password" placeholder="Enter password" name="userName" required />
 
-                        <button>Login</button>
+                        <button className="loginbtn">Login</button>
                     </div>
 
                     <div className="container">

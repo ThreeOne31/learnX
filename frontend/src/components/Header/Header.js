@@ -147,6 +147,7 @@ class Header extends React.Component{
                         <div className="container">
                             <label><b>Username</b></label>
                             <input 
+                                className="userName-input"
                                 type="text" 
                                 placeholder="Enter email" 
                                 name="email" 
@@ -157,6 +158,7 @@ class Header extends React.Component{
 
                             <label><b>password</b></label>
                             <input 
+                                className="password-input"
                                 type="password" 
                                 placeholder="Enter password" 
                                 name="password"
@@ -164,7 +166,7 @@ class Header extends React.Component{
                                 required 
                             />
 
-                            <button>Login</button>
+                            <button className="loginbtn">Login</button>
                         </div>
 
                         <div className="container">

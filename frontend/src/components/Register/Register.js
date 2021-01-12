@@ -43,6 +43,7 @@ class Register extends React.Component{
 
                         <label><b>Email</b></label>
                         <input 
+                            className="userName-input"
                             type="text" 
                             placeholder="Enter Email" 
                             name="email"
@@ -53,6 +54,7 @@ class Register extends React.Component{
 
                         <label ><b>Password</b></label>
                         <input 
+                            className="password-input"
                             type="password" 
                             placeholder="Enter Password" 
                             name="password"
@@ -63,6 +65,7 @@ class Register extends React.Component{
 
                         <label ><b>Repeat Password</b></label>
                         <input 
+                            className="password-input"
                             type="password" 
                             placeholder="Repeat Password" 
                             name="repeatPassword" 
