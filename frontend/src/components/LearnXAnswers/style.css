@@ -1,7 +1,31 @@
 .QnA-main-container{
     margin: 1rem 2rem;
 }
-
+.queation-header{
+    display: flex;
+    justify-content: flex-end;
+}
+.add-question{
+    width: 10rem;
+    height: 2.5rem;
+    font-size: 1.6rem;
+    margin-right: 1.5rem;
+    margin-top: 0.6rem;
+    text-align: center;
+}
+.question-sort{
+    height: 2.5rem;
+    font-size: 1.6rem;
+    margin-right: 1.5rem;
+    margin-top: 0.6rem;
+}
+.question-search{
+    width: 10rem;
+    height: 2rem;
+    font-size: 1.6rem;
+    margin-right: 1.5rem;
+    margin-top: 0.6rem;
+}
 .question {
     border: 2px solid #dedede;
     background-color: #f1f1f1;
@@ -15,11 +39,6 @@
     background-color: #ddd;
 }
 
-.question::after {
-    content: "";
-    clear: both;
-    display: table;
-}
 .question img {
     float: left;
     max-width: 6rem;
@@ -49,12 +68,15 @@
     padding: 0;
 }
 .question-buttons{
-    margin: 0 1rem 0 0;
+    margin: 0 1rem 1rem 0;
     padding: 0;
+    font-size: 1.5rem;
     width: auto;
     background: none;
     color: #000;
     font-style: italic;
+    border:  none;
+    font-weight: bold;
 }
 .question-tags{
     float: right;
@@ -70,6 +92,7 @@
     overflow: hidden;
 }
 .reply-count{
+    display: block;
     margin: 1rem 0 0 8rem;
     font-size: 2.5rem;
 }
@@ -90,11 +113,10 @@
     border: none;
     align-items: center;
 }
-.reply-form-container textarea{
+.reply-form-container input{
     width: 90%;
-    border: none;
-    height: 4rem;
     align-content: center;
+    background-color: #fff;
 }
 .send-reply{
     margin: 0;
@@ -115,6 +137,7 @@
     padding: 1rem 0;
     border: none;
 }
-.replies-icon{
+.question i{
+    margin-left: 8rem;
     cursor: pointer;
 }
