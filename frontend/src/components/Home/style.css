@@ -166,4 +166,7 @@ header.mission-statement-container p {
     .post-card{
         width: 95%;
     }
+    .post-img-container img{
+        max-width: 10em;
+    }
 }
