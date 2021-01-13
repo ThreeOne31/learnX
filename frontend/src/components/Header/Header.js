@@ -136,7 +136,7 @@ class Header extends React.Component{
                         <li><Link to="/">English Quiz</Link></li>
                         <li><Link to="/">General Knowledge</Link></li>
                     </ul>
-                <li><Link to="/">LearnX Answers</Link></li>
+                <li><Link to="/learnx-answers">LearnX Answers</Link></li>
                 <li><Link to="/">Register for a Course</Link></li>
             </ul>
             </aside>

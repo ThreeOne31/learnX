@@ -6,6 +6,7 @@ import Login from "../components/Login"
 import Register from "../components/Register"
 import Lectures from "../components/Lectures"
 import Resources from "../components/Resources"
+import LearnxAnswers from "../components/LearnXAnswers/LearnxAnswers"
 
 function PageRouter(){
     return(
@@ -15,6 +16,7 @@ function PageRouter(){
                 <Route path="/login" component={Login} />
                 <Route path="/courseCode/lectures" component={Lectures} />
                 <Route path="/courseCode/resources" component={Resources} />
+                <Route path="/learnx-answers" component={LearnxAnswers} />
             </Switch>
     )
 }
