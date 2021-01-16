@@ -1,8 +1,49 @@
 import React from "react"
 
 import "./style.css"
+import { connect } from "react-redux"
 
 class LearnxAnswers extends React.Component{
+    state ={
+        replyMessage: "",
+        courseTag: "",
+        courseSubTag: "",
+        questionMessage: "",
+        questionTitle: ""
+    }
+
+    handleChange = (event) => {
+        const {name, value} = event.target
+        this.setState({
+            [name]: value
+        })
+    }
+    handleReplySubmission = (event) => {
+        event.preventDefault()
+        const questionId = event.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode.getAttribute("question-id")
+        this.props.addReply(this.state.replyMessage, questionId)
+        this.setState({
+            replyMessage: ""
+        })
+    }
+    handleQuestionSubmission = (event) => {
+        event.preventDefault()
+        const question = {
+            title: this.state.questionTitle,
+            text: this.state.questionMessage,
+            courseTag: this.state.courseTag,
+            courseSubTag: this.state.courseSubTag,
+            
+        }
+        this.props.addQuestion(question)
+        this.setState({
+            questionTitle: "",
+            courseTag: "",
+            courseSubTag: "",
+            questionMessage: ""
+        })
+        this.closeOverlayForm()
+    }
     
     replyAccordion = (event) =>{
         
@@ -19,22 +60,92 @@ class LearnxAnswers extends React.Component{
     
     accordion = (event) =>{
         event.target.style.display = "none"
-        let questionChildren = event.target.parentElement.children
+        let questionChildren = event.target.parentElement.parentElement.children
         let replies = questionChildren[5].lastChild
 
         if (replies.style.display === "block") {
             replies.style.display = "none"            
         } else {
             replies.style.display = "block";
-        }          
+        }        
     }
+
+    openOverlayForm = () =>{
+        document.querySelector(".add-question-overlay").classList.add("open")
+    }
+    closeOverlayForm = () =>{
+        document.querySelector(".add-question-overlay").classList.remove("open")
+    }
+
     render(){
+       
+        const questions = this.props.questions? (
+            this.props.questions.map(question =>{
+                const repliesCount = question.replies.length? <i onClick={this.accordion} className="fa fa-envelope replies-icon">  {question.replies.length} replies</i> :<div></div>
+                const replies = question.replies.map(reply =>                             
+                    <li key={reply.id}>
+                        <div className="reply-item">
+                            <span className="time-right">{reply.date}</span>
+                            <img src="/assets/images/avatar_g2.jpg" alt="Avatar" />
+                            <h3>{reply.author}</h3>
+                            <p className="reply-message">{reply.message}</p>                            
+                        </div>
+                    </li>   
+                )
+                
+                return(
+                    <div className="question" question-id={question.id} key={question.id}>
+                        <span className="time-right">{question.date}</span>
+                        <img src="/assets/images/bandmember.jpg" alt="Avatar" />
+                        <h3>{question.author}</h3>
+                        <h4>Question title</h4>
+                        <p>
+                            {question.message}
+                        </p>
+                        <div className="question-footer">                                
+                            <div>
+                                <button onClick={this.replyAccordion} className="question-buttons reply">Reply</button>
+                                <button className="question-buttons follow">follow</button> 
+                                <span className="question-tags">#physics  #circularMotion</span>
+                            </div>
+                                <ul className="reply-n-replies">
+                                    <li>
+                                        <div className="reply-form-container">
+                                            <img src="/assets/images/avatar_g2.jpg" alt="Avatar" />
+                                            <form onSubmit={this.handleReplySubmission}>
+                                                <input 
+                                                    onChange={this.handleChange} 
+                                                    className="reply-input-message" 
+                                                    type="text" name="replyMessage" 
+                                                    placeholder="type reply"
+                                                    value={this.state.replyMessage}
+                                                />
+                                                <button className="send-reply">send</button>
+                                            </form>                       
+                                        </div>                                            
+                                    </li>                                       
+                                    {replies}                                                                             
+                                </ul>                
+                        </div>                        
+                    <div>{repliesCount}</div>                                                       
+                    </div> 
+                )
+            })
+        ):(
+            <div>
+                <h2>Feel like challenging us? Leave a question, lets see what you got?</h2>
+            </div>
+        )
         return(
             <div className="main">
+                {/***********************************************************************************************************/}
+                {/*                                               QUESTION CONT                                             */}
+                {/***********************************************************************************************************/}
                 <div className="QnA-main-container">
                     <h2>LearnX Answers</h2>
+                     
                     <div className="queation-header">
-                        <button className="add-question">Add</button>
+                        <button className="add-question" onClick={this.openOverlayForm}>Add</button>
                         <select className="question-sort">
                             <option>Most Recent</option>
                             <option>Oldest</option>
@@ -43,76 +154,75 @@ class LearnxAnswers extends React.Component{
                         </select>
                         <input className="question-search" type="text" name="search" placeholder="Search..." />                        
                     </div>
-                    <div className="question-container">
-                          
-                        <div className="question">
-                            <span className="time-right">11:00</span>
-                            <img src="/assets/images/bandmember.jpg" alt="Avatar" />
-                            <h3>UserName</h3>
-                            <h4>Question title</h4>
-                            <p>
-                                Whenever I conteplate the blue colour I remember St Boniface, I say why me, why not mosuwe why not lehakoe la pelo eaka
-                                Whenever I conteplate the blue colour I remember St Boniface, I say why me, why not mosuwe why not lehakoe la pelo eaka
-                            </p>
-                            <div className="question-footer">                                
-                                <div>
-                                    <button onClick={this.replyAccordion} className="question-buttons reply">Reply</button>
-                                    <button className="question-buttons follow">follow</button> 
-                                    <span className="question-tags">#physics  #circularMotion</span>
-                                </div>
-                                    <ul className="reply-n-replies">
-                                        <li>
-                                            <div className="reply-form-container">
-                                                <img src="/assets/images/bandmember.jpg" alt="Avatar" />
-                                                <form>
-                                                    <input type="text" name="reply-message" placeholder="type reply"/>
-                                                    <button className="send-reply">send</button>
-                                                </form>                          
-                                            </div>                                            
-                                        </li>
-                                        <li>
-                                            <div className="reply-item">
-                                                <span className="time-right">11:00</span>
-                                                <img src="/assets/images/bandmember.jpg" alt="Avatar" />
-                                                <h3>UserName</h3>
-                                                <p className="reply-message">Hello. How are you today?</p>                            
-                                            </div>
-                                        </li>
-                                    </ul>                
-                            </div>                        
-                            <i onClick={this.accordion} className="fa fa-envelope replies-icon"> 4 replies</i>                                                        
-                        </div>                       
+                    <div className="question-container"> 
+                        {questions}                                                                                        
                     </div>
                 </div>
+
+                {/***********************************************************************************************************/}
+                {/*                                                FORM OVERLAY                                             */}
+                {/***********************************************************************************************************/}
+                <div className="add-question-overlay">
+                    <form onSubmit={this.handleQuestionSubmission} className="form-content">
+                        
+                        <div className="tags-container">
+                            <label><b>Tags:</b></label>
+                            <select value={this.state.courseTag} className="tag-selection" name="courseTag" onChange={this.handleChange}>
+                                <option value="Maths">Maths</option>
+                                <option value="Sesotho">Sesotho </option>
+                                <option value="Phusics">Physics</option>
+                                <option value="English">English</option>
+                            </select>
+                            <select value={this.state.courseSubTag} className="tag-selection" name="courseSubTag" onChange={this.handleChange}>
+                                <option value="Trignometry">Trignometry</option>
+                                <option value="Shapes">Shapes </option>
+                                <option value="Leaner Programming">Learner Programming</option>
+                                <option value="Geometry">Geometry</option>
+                            </select>
+                            <br />
+                            <label><b>Title</b></label>
+                            <input 
+                                className="password-input" 
+                                type="text"
+                                placeholder="Question title" 
+                                name="questionMessage"
+                                onChange={this.handleChange} 
+                                value={this.state.questionTitle}
+                                required 
+                            />
+
+                            <label><b>Question</b></label>
+                            <textarea 
+                                className="password-input" 
+                                placeholder="Start typying your question" 
+                                name="questionMessage"
+                                onChange={this.handleChange} 
+                                value={this.state.questionMessage}
+                                required 
+                            />
+                        <div className="question-form-footer">
+                            <button className="addQbtn">Submit</button>
+                            <button onClick={this.closeOverlayForm} type="button" className="cancelbtn">Cancel</button>                            
+                        </div>
+                        </div>                        
+                    </form>
+                </div>
+        
             </div>
-    )}
+        
+        )
+    }
 }
-export default LearnxAnswers
-
-/*
-                <div className="container">
-                    <img src="/assets/images/bandmember.jpg" alt="Avatar" />
-                    <p>Hello. How are you today?</p>
-                    <span className="time-right">11:00</span>
-                </div>
-
-                <div className="container darker">
-                <img src="/assets/images/avatar_g2.jpg" alt="Avatar" className="right" />
-                <p>Hey! I'm fine. Thanks for asking!</p>
-                <span className="time-left">11:01</span>
-                </div>
-
-                <div className="container">
-                <img src="/assets/images/bandmember.jpg" alt="Avatar" />
-                <p>Sweet! So, what do you wanna do today?</p>
-                <span className="time-right">11:02</span>
-                </div>
-
-                <div className="container darker">
-                <img src="/assets/images/avatar_g2.jpg" alt="Avatar"/>
-                <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
-                <span className="time-left">11:05</span>
-                </div>
-
-
-*/
+function mapStateToProps(state){
+    return{
+        students: state.students,
+        questions: state.questions
+    }
+}
+function mapDispatchToProps(dispatch){
+    return{
+        addReply: (reply, questionId) => dispatch({type: 'ADD_REPLY', payload: {reply: reply, questionId: questionId}}),
+        addQuestion: (question) => dispatch({type: 'ADD_QUESTION', question: question})
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(LearnxAnswers)

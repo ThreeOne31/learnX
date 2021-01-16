@@ -31,7 +31,7 @@
     background-color: #f1f1f1;
     border-radius: .5rem;
     padding: 1rem;
-    margin: 1rem 0;
+    margin: 2rem 0;
 }
 
 .darker {
@@ -39,7 +39,7 @@
     background-color: #ddd;
 }
 
-.question img {
+.question img, .reply-form-container img{
     float: left;
     max-width: 6rem;
     max-height: 6rem;
@@ -104,6 +104,7 @@
     border-radius: 1.5rem;
     padding: 1rem;
     margin: 2rem 0;
+    border: 1px solid #6d6d6d;
 }
 .reply-form-container form{
     display: flex;
@@ -115,15 +116,29 @@
 }
 .reply-form-container input{
     width: 90%;
-    align-content: center;
+    height: 1.5rem;
+    padding: 1.5rem;
     background-color: #fff;
 }
+.reply-form-container input:focus{
+    border: none;
+
+}
 .send-reply{
+    color: #fff;
     margin: 0;
-    width: 8%;
+    width: 6%;
     min-width: 5rem;
+    height: 4rem;
     border-radius: 10%;
     text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+    background-color: green;
+    border: none;
+    margin-left: 0.5rem;
+    cursor: pointer;
 }
 .reply-item{
     border: 2px solid #dedede;
@@ -140,4 +155,44 @@
 .question i{
     margin-left: 8rem;
     cursor: pointer;
+}
+
+
+/***************************ADD QUESTION*************************************/
+.add-question-overlay{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+.add-question-overlay.open{
+    display: block;
+}
+.form-content{
+    border: 0.3rem solid #f1f1f1;
+    background-color: #fefefe;
+    margin: 3rem auto;
+    padding: 2rem;
+    width: 40%;
+}
+.question-form-footer{
+    display: flex;
+    justify-content: space-between;
+}
+.addQbtn {
+    width: auto;
+    color: #fff;
+    padding: 1rem 1.8rem;
+    background-color: #4CAF50;
+}
+.tag-selection{
+    margin: 1rem;
+    font-size: 2rem;
 }
