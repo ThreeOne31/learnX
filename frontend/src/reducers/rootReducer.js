@@ -67,6 +67,7 @@ const initState = {
             replies: [
                 {
                     id:1,
+                    votes: 0,
                     author: "John Doe",
                     date: "12:30",
                     message: "Ramalepa hara likoti ha u lengope u khoho u khoho e mereti e metso, nokeng ho lula lithabela koluwa, banna ba hoja mahata a batho",
@@ -74,6 +75,7 @@ const initState = {
                 },
                 {
                     id:2,
+                    votes: 0,
                     author: "John Doe",
                     date: "12:30",
                     message: "Ramalepa hara likoti ha u lengope u khoho u khoho e mereti e metso, nokeng ho lula lithabela koluwa, banna ba hoja mahata a batho",
@@ -135,6 +137,7 @@ function rootReducer(state=initState, action){
                         replies: [                            
                             {
                                 id: Math.random(),
+                                votes: 0,
                                 author: "John Doe",
                                 date: "12:30",
                                 message: action.payload.reply,
@@ -146,6 +149,31 @@ function rootReducer(state=initState, action){
                 }
                 return question
             })
+        }
+    }
+    if(action.type === 'REPLY_VOTE'){
+        return{
+            ...state,
+            questions: state.questions.map(question =>{
+                if(parseInt(question.id, 10) === parseInt(action.payload.questionId, 10)){
+                    
+                    return{
+                        ...question, 
+                        replies: question.replies.map(reply =>{
+                            if(parseInt(action.payload.replyId, 10) === parseInt(reply.id, 10)){
+                                if(action.payload.voteType === 'ADD'){
+                                    reply.votes++
+                                }else{
+                                    reply.votes--
+                                }
+                            }
+                            return reply
+                        })
+                    }
+                }
+                return question
+            })
+
         }
     }
     return state

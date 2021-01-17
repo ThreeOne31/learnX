@@ -12,6 +12,17 @@ class LearnxAnswers extends React.Component{
         questionTitle: ""
     }
 
+    handleVoting = (event) =>{
+        const votingButton = event.target.getAttribute("button-name")
+        const replyId = event.currentTarget.parentNode.parentNode.parentNode.getAttribute("reply-id")
+        const questionId = event.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.getAttribute("question-id")
+        if(votingButton === "vote-up"){
+            this.props.replyVote(questionId, replyId, 'ADD')
+        }else{
+            this.props.replyVote(questionId, replyId, 'SUBTRACT')
+        }
+    }
+
     handleChange = (event) => {
         const {name, value} = event.target
         this.setState({
@@ -32,9 +43,9 @@ class LearnxAnswers extends React.Component{
             title: this.state.questionTitle,
             text: this.state.questionMessage,
             courseTag: this.state.courseTag,
-            courseSubTag: this.state.courseSubTag,
-            
+            courseSubTag: this.state.courseSubTag,            
         }
+
         this.props.addQuestion(question)
         this.setState({
             questionTitle: "",
@@ -83,12 +94,19 @@ class LearnxAnswers extends React.Component{
             this.props.questions.map(question =>{
                 const repliesCount = question.replies.length? <i onClick={this.accordion} className="fa fa-envelope replies-icon">  {question.replies.length} replies</i> :<div></div>
                 const replies = question.replies.map(reply =>                             
-                    <li key={reply.id}>
-                        <div className="reply-item">
-                            <span className="time-right">{reply.date}</span>
-                            <img src="/assets/images/avatar_g2.jpg" alt="Avatar" />
-                            <h3>{reply.author}</h3>
-                            <p className="reply-message">{reply.message}</p>                            
+                    <li reply-id={reply.id} key={reply.id}>
+                        <div className="reply-item">                            
+                            <div>
+                                <img src="/assets/images/avatar_g2.jpg" alt="Avatar" />
+                                <h3>{reply.author}</h3>
+                                <p className="reply-message">{reply.message}</p>    
+                            </div> 
+                            <div className="votes-container">
+                                <span className="time-right">{reply.date}</span>
+                                <button onClick={this.handleVoting} button-name="vote-up" className="reply-vote-up">+</button>
+                                <p>{reply.votes}</p>
+                                <button  onClick={this.handleVoting} button-name="vote-down" className="reply-vote-down">-</button>
+                            </div>                           
                         </div>
                     </li>   
                 )
@@ -221,8 +239,9 @@ function mapStateToProps(state){
 }
 function mapDispatchToProps(dispatch){
     return{
+        addQuestion: (question) => dispatch({type: 'ADD_QUESTION', question: question}),
         addReply: (reply, questionId) => dispatch({type: 'ADD_REPLY', payload: {reply: reply, questionId: questionId}}),
-        addQuestion: (question) => dispatch({type: 'ADD_QUESTION', question: question})
+        replyVote: (questionId, replyId, voteType) => dispatch({type: 'REPLY_VOTE', payload:{ questionId: questionId, replyId: replyId, voteType: voteType}})
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(LearnxAnswers)
