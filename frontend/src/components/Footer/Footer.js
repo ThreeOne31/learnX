@@ -8,17 +8,23 @@ function Footer(){
                 <section className="footer-items">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li>Hello Word</li>
-                        <li>Hello Word</li>
-                        <li>Hello Word</li>
+                        <li className="quick-link">Hello Word</li>
+                        <li className="quick-link">Hello Word</li>
+                        <li className="quick-link">Hello Word</li>
+                        <li className="quick-link">Hello Word</li>
+                        <li className="quick-link">Hello Word</li>
+                        <li className="quick-link">Hello Word</li>
                     </ul>
                 </section>
                 <section className="footer-items">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li>Hello Word</li>
-                        <li>Hello Word</li>
-                        <li>Hello Word</li>
+                        <li className="quick-link">Hello Word</li>
+                        <li className="quick-link">Hello Word</li>
+                        <li className="quick-link">Hello Word</li>
+                        <li className="quick-link">Hello Word</li>
+                        <li className="quick-link">Hello Word</li>
+                        <li className="quick-link">Hello Word</li>
                     </ul>
                 </section>
                 <section className="footer-items">
@@ -26,14 +32,13 @@ function Footer(){
                     <form>
                         <div className="form-container">
                             <div className="form-inputs" >
-                                <input className="name-input" type="text" placeholder="email@mail.com"/>
-                            </div>
-                            <div className="form-inputs">
+                                <input className="name-input" type="text" placeholder="name"/>                           
                                 <input className="email-input" type="email" placeholder="email@mail.com"/>
                             </div>
                             <div className="message-input">
-                                <textarea name="message" placeholder="message"></textarea>
+                                <textarea className="input-textarea" name="message" placeholder="message"></textarea>
                             </div>
+                            <button className="send-msg-btn">send message</button>
                         </div>
                     </form>
                 </section>

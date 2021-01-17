@@ -96,10 +96,11 @@ class LearnxAnswers extends React.Component{
                 const replies = question.replies.map(reply =>                             
                     <li reply-id={reply.id} key={reply.id}>
                         <div className="reply-item">                            
-                            <div>
+                            <div className="reply-msg-container">
                                 <img src="/assets/images/avatar_g2.jpg" alt="Avatar" />
-                                <h3>{reply.author}</h3>
-                                <p className="reply-message">{reply.message}</p>    
+                                <div className="reply-text-msg">                                    <h3>{reply.author}</h3>
+                                    <p className="reply-message">{reply.message}</p>
+                                </div>   
                             </div> 
                             <div className="votes-container">
                                 <span className="time-right">{reply.date}</span>
@@ -116,7 +117,7 @@ class LearnxAnswers extends React.Component{
                         <span className="time-right">{question.date}</span>
                         <img src="/assets/images/bandmember.jpg" alt="Avatar" />
                         <h3>{question.author}</h3>
-                        <h4>Question title</h4>
+                        <h4>{question.title}</h4>
                         <p>
                             {question.message}
                         </p>
@@ -203,7 +204,7 @@ class LearnxAnswers extends React.Component{
                                 className="password-input" 
                                 type="text"
                                 placeholder="Question title" 
-                                name="questionMessage"
+                                name="questionTitle"
                                 onChange={this.handleChange} 
                                 value={this.state.questionTitle}
                                 required 

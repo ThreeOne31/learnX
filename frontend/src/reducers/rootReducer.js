@@ -62,6 +62,7 @@ const initState = {
             id: 1,
             author: "Marvelous Mo",
             date: "10:30",
+            title: "English Joke",
             message:"What was was before was?",
             attachments: "file src here",
             replies: [
@@ -117,6 +118,7 @@ function rootReducer(state=initState, action){
                     id: Math.random(),
                     author: "Marvelous Mo",
                     date: "10:30",
+                    title: action.question.title,
                     message: action.question.text,
                     attachments: "file src here",
                     replies: []

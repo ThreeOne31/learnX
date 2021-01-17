@@ -30,7 +30,7 @@ li, a{
     font-size: 3.4rem;
     color: #000;
     font-style: italic;
-    text-shadow: 0.05em 0.075em 0 rgba(0, 0, 0, 0.2);
+    text-shadow: 0.05em 0.075em 0 rgba(11, 209, 37, 0.5);
 }
 .banner p{
     font-size: 2.0rem;
@@ -141,7 +141,7 @@ header.mission-statement-container p {
 }
 .post-text{
     width: 80%;
-    padding-left: 3rem;
+    padding: 1rem 1rem 1rem 3rem;
     text-align: left;
 }
 .post-text h3{

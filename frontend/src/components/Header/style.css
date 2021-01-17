@@ -60,9 +60,6 @@ li{
     color: #fff;
     opacity: 1;
 }
-.nav-links a{
-    margin-right: 2rem;  /* add space between nav-links*/
-}
 .nav-links i{
     margin-right: 2rem;
     font-size: 3rem;

@@ -114,6 +114,11 @@
     border: none;
     align-items: center;
 }
+.reply-msg-container{
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+}
 .reply-form-container input{
     width: 90%;
     height: 1.5rem;
@@ -150,7 +155,7 @@
     margin: 1rem 0;
 }
 .reply-item p{
-    margin: 0 0 1.5rem 0rem;
+    margin: 0 0 1.5rem 0;
     padding: 0;
     border: none;
 }
