@@ -132,9 +132,9 @@ class Header extends React.Component{
                 <ul className="side-menu-content non-reg">
                 <li><Link to="/"  onClick={this.siteMenuAccordion} className="accordion">QUIZ</Link></li>
                     <ul className="course-tools open-access">
-                        <li><Link to="/">Maths Quiz</Link></li>
-                        <li><Link to="/">English Quiz</Link></li>
-                        <li><Link to="/">General Knowledge</Link></li>
+                        <li><Link to="/quizs/general">Maths Quiz</Link></li>
+                        <li><Link to="/quizs/general">English Quiz</Link></li>
+                        <li><Link to="/quizs/general">General Knowledge</Link></li>
                     </ul>
                 <li><Link to="/learnx-answers">LearnX Answers</Link></li>
                 <li><Link to="/">Register for a Course</Link></li>
