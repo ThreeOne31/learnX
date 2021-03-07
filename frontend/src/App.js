@@ -9,7 +9,7 @@ import "./styles/main.css"
 
 function App() {
   return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Header />
           <PageRouter />
           <Footer />
