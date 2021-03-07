@@ -171,7 +171,7 @@ header.mission-statement-container p {
         margin: auto;
     }
     .post-card{
-        width: 100%;
+        min-width: 360px;
         padding: 0;
         margin-bottom: 1em;
         display: flex;
@@ -180,5 +180,8 @@ header.mission-statement-container p {
     .post-img-container img{
         max-width: 100%;
         display: block;
+    }
+    .bussiness-point{
+        min-width: 400px;
     }
 }

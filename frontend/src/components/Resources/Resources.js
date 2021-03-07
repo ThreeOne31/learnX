@@ -25,7 +25,7 @@ class Resources extends React.Component{
                             <th>Last Modified</th>
                         </tr>
                         <tr>
-                            <td><a download href="/assets/resources/Django API polls.pdf">Django APIs</a></td>
+                            <td><a download href="../../../public/assets/resources/Django API polls.pdf">Django APIs</a></td>
                             <td>Delete</td>
                             <td>Ralihlaba</td>
                             <td>2020/09/01</td>

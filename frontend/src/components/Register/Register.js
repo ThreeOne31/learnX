@@ -8,7 +8,18 @@ class Register extends React.Component{
     state = {
         email: "",
         password: "",
-        repeatPassword: ""
+        repeatPassword: "",
+        courses: [
+            {
+                courseCode:'SESG9',
+            },
+            {
+                courseCode: 'MAMG9',
+            },
+            {
+                courseCode:'ENGG9',
+            }
+        ]
     }
     handlechange = (event) => {
         this.setState({

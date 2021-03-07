@@ -176,7 +176,7 @@ class LearnxAnswers extends React.Component{
                         </select>
                         <input className="question-search" type="text" name="search" placeholder="Search..." />                        
                     </div>
-                    <div className="question-container"> 
+                    <div className="qtn-container"> 
                         {questions}                                                                                        
                     </div>
                 </div>

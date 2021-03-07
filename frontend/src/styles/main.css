@@ -10,6 +10,7 @@ html{
 body{
     font: 1.6rem Helvetica; /* font size font name*/
     margin: 0; /* remove default margin*/ 
+    overflow-x: scroll;
 }
 a{
     text-decoration: none;
@@ -36,6 +37,5 @@ h2, h1 {
     grid-area: main;
     min-height: 100vh;
     margin-top: 5.01rem;
-    overflow: auto;
 }
 

@@ -1,5 +1,7 @@
 import React from "react"
+
 import './style.css'
+import lec_video from "./videos/nice.mp4"
 
 class Lectures extends React.Component{
     render(){
@@ -10,7 +12,7 @@ class Lectures extends React.Component{
                         <ul className="recent-lectures">
                             <li className="lecture-card">
                                 <video className="lecture-video" controls>
-                                    <source src="/assets/lectures/node_tutorial.mp4" type="video/mp4" />
+                                    <source src={lec_video} type="video/mp4" />
                                 </video>
                                 <div className="lecture-footer">
                                     <div className="lecture-title">Lecture 3</div>
@@ -20,7 +22,7 @@ class Lectures extends React.Component{
                             </li>
                             <li className="lecture-card">
                                 <video className="lecture-video" controls>
-                                    <source src="/assets/lectures/node_tutorial.mp4" type="video/mp4" />
+                                    <source src={lec_video} type="video/mp4" />
                                 </video>
                                 <div className="lecture-footer">
                                     <div className="lecture-title">Lecture 2</div>
@@ -30,7 +32,7 @@ class Lectures extends React.Component{
                             </li>
                             <li className="lecture-card">
                                 <video className="lecture-video" controls>
-                                    <source src="/assets/lectures/node_tutorial.mp4" type="video/mp4" />
+                                    <source src={lec_video} type="video/mp4" />
                                 </video>
                                 <div className="lecture-footer">
                                     <div className="lecture-title">Lecture 1</div>

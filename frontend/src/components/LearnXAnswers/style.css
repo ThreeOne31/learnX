@@ -1,5 +1,5 @@
 .QnA-main-container{
-    margin: 1rem 2rem;
+    margin: 1rem 0;
 }
 .queation-header{
     display: flex;
@@ -25,6 +25,10 @@
     font-size: 1.6rem;
     margin-right: 1.5rem;
     margin-top: 0.6rem;
+}
+.qtn-container{
+    margin: 2rem;
+    padding: 0;
 }
 .question {
     border: 2px solid #dedede;
@@ -212,4 +216,14 @@
 .votes-container p{
     margin: 0;
     padding: 0.5rem;
+}
+
+@media screen and (max-width: 840px){
+    .qtn-container{
+        margin: 0.5em;
+        min-width: 400px;
+    }
+    .queation-header{
+        min-width: 400px;
+    }
 }

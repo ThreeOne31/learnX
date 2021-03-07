@@ -93,7 +93,10 @@ function rootReducer(state=initState, action){
         action.student.isLoggedIn = false
         return{
             ...state,
-            students: [...state.students, action.student]
+            students: [
+                ...state.students, 
+                action.student
+            ]
         }
     }
     if(action.type === 'LOGIN_USER'){

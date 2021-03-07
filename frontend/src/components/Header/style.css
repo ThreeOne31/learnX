@@ -187,8 +187,6 @@ li{
     box-sizing: border-box;
 }
 
-
-
 .cancelbtn {
     width: auto;
     color: #fff;
@@ -203,4 +201,11 @@ li{
 span.psw {
     float: right;
     padding-top: 1.6rem;
+}
+
+@media screen and (max-width: 840px){
+    .form-content{
+        margin: 0;
+        min-width: 360px;
+    }
 }
