@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 import "./style.css"
-import react_image from "../../../public/assets/images/react_image.jpg"
+import react_image from "./images/react_image.jpg"
 class Home extends React.Component{
     render(){
         return(
