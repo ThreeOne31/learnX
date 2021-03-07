@@ -64,7 +64,7 @@ class Home extends React.Component{
                     <div className="posts-container">
                         <div className="post-card">
                             <div className="post-img-container">
-                                <img src="/assets/images/react_image.jpg" alt="post"/>                            </div>
+                                <img src="../../../public/assets/images/react_image.jpg" alt="post"/>                            </div>
                             <div className="post-text">
                                 <h3 className="post-title">Study Tips</h3>
                                 <h5>14 July 2016</h5>
