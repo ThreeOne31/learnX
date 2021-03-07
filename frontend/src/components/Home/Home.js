@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 import "./style.css"
+import react_image from "../../../public/assets/images/react_image.jpg"
 class Home extends React.Component{
     render(){
         return(
@@ -64,7 +65,8 @@ class Home extends React.Component{
                     <div className="posts-container">
                         <div className="post-card">
                             <div className="post-img-container">
-                                <img src="../../../public/assets/images/react_image.jpg" alt="post"/>                            </div>
+                                <img src={react_image} alt="post"/>                          
+                            </div>
                             <div className="post-text">
                                 <h3 className="post-title">Study Tips</h3>
                                 <h5>14 July 2016</h5>
