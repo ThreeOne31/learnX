@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 import "./style.css"
-import react_image from "./images/react_image.jpg"
+import react_image from "./images/study_tips.jpeg"
 class Home extends React.Component{
     render(){
         return(
@@ -75,7 +75,7 @@ class Home extends React.Component{
                         </div>
                         <div className="post-card">
                             <div className="post-img-container">
-                                <img src="/assets/images/react_image.jpg" alt="post"/>
+                                <img src={react_image} alt="post"/> 
                             </div>
                             <div className="post-text">
                                 <h3 className="post-title">A note on career choice</h3>
@@ -85,7 +85,7 @@ class Home extends React.Component{
                         </div>
                         <div className="post-card">
                             <div className="post-img-container">
-                                <img src="/assets/images/react_image.jpg" alt="post"/>
+                                <img src={react_image} alt="post"/> 
                             </div>
                             <div className="post-text">
                                 <h3 className="post-title">Life after High school</h3>
@@ -95,7 +95,7 @@ class Home extends React.Component{
                         </div>
                         <div className="post-card">
                             <div className="post-img-container">
-                                <img src="/assets/images/react_image.jpg" alt="post"/>
+                                <img src={react_image} alt="post"/> 
                             </div>
                             <div className="post-text">
                                 <h3 className="post-title">Post title</h3>
@@ -105,7 +105,7 @@ class Home extends React.Component{
                         </div>
                         <div className="post-card">
                             <div className="post-img-container">
-                                <img src="/assets/images/react_image.jpg" alt="post"/>
+                                <img src={react_image} alt="post"/> 
                             </div>
                             <div className="post-text">
                                 <h3 className="post-title">Post title</h3>
@@ -115,7 +115,7 @@ class Home extends React.Component{
                         </div>
                         <div className="post-card">
                             <div className="post-img-container">
-                                <img src="/assets/images/react_image.jpg" alt="post"/>
+                                <img src={react_image} alt="post"/> 
                             </div>
                             <div className="post-text">
                                 <h3 className="post-title">Post title</h3>

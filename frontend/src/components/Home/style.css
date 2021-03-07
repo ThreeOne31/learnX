@@ -8,7 +8,7 @@ li, a{
 /*-------------------------BANNER------------------------------*/
 .banner-img {
     min-height: calc(100vh - 60px);
-    background: url("../../../public/assets/images/react_image.jpg") center/cover no-repeat;
+    background: url("./images/learnx_banner1.jpeg") center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;

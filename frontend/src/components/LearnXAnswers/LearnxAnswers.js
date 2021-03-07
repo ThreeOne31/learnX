@@ -3,6 +3,9 @@ import React from "react"
 import "./style.css"
 import { connect } from "react-redux"
 
+import avatar_g2 from "./images/avatar_g2.jpg"
+import bandmember from "./images/bandmember.jpg"
+
 class LearnxAnswers extends React.Component{
     state ={
         replyMessage: "",
@@ -97,7 +100,7 @@ class LearnxAnswers extends React.Component{
                     <li reply-id={reply.id} key={reply.id}>
                         <div className="reply-item">                            
                             <div className="reply-msg-container">
-                                <img src="/assets/images/avatar_g2.jpg" alt="Avatar" />
+                                <img src={avatar_g2} alt="Avatar" />
                                 <div className="reply-text-msg">                                    <h3>{reply.author}</h3>
                                     <p className="reply-message">{reply.message}</p>
                                 </div>   
@@ -115,7 +118,7 @@ class LearnxAnswers extends React.Component{
                 return(
                     <div className="question" question-id={question.id} key={question.id}>
                         <span className="time-right">{question.date}</span>
-                        <img src="/assets/images/bandmember.jpg" alt="Avatar" />
+                        <img src={bandmember} alt="Avatar" />
                         <h3>{question.author}</h3>
                         <h4>{question.title}</h4>
                         <p>
@@ -130,7 +133,7 @@ class LearnxAnswers extends React.Component{
                                 <ul className="reply-n-replies">
                                     <li>
                                         <div className="reply-form-container">
-                                            <img src="/assets/images/avatar_g2.jpg" alt="Avatar" />
+                                            <img src={avatar_g2} alt="Avatar" />
                                             <form onSubmit={this.handleReplySubmission}>
                                                 <input 
                                                     onChange={this.handleChange} 
