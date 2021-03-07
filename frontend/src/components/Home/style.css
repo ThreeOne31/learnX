@@ -95,7 +95,7 @@ li, a{
 /*-------------------Mission Statement----------------------*/
 .wrapper {
     background-color: #fff;
-    background-image: url(/assets/images/bg02.png), url(/assets/images/bg03.png), url(/assets/images/bg01.png);
+    background-image: url(../../../public/assets/images/bg02.png), url(../../../public/assets/images/bg03.png), url(../../../public/assets/images/bg01.png);
     background-position: top left, bottom left, top left;
     background-size: 100% 6em, 100% 6em, auto;
     background-repeat: no-repeat, no-repeat, repeat;
@@ -163,10 +163,22 @@ header.mission-statement-container p {
 }
 
 @media screen and (max-width: 840px){
+    .blog-post{
+        margin: 1em;
+    }
+    .post-text{
+        padding: 0;
+        margin: auto;
+    }
     .post-card{
-        width: 95%;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 1em;
+        display: flex;
+        flex-direction: column;
     }
     .post-img-container img{
-        max-width: 10em;
+        max-width: 100%;
+        display: block;
     }
 }
